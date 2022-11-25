@@ -1,25 +1,20 @@
 extends KinematicBody2D
 
-
 onready var _animated_sprite = $Animation
-export var gravity = 500.0
-export var walk_speed = 100
-var test = 0
+export var gravity = 350.0
+export var walk_speed = 150
 var velocity = Vector2()
 
 func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += delta * gravity
 		
-	var jump_impulse = velocity.y + 400
+	var jump_impulse = velocity.y + 300
 	
 	_get_input(jump_impulse)
 	
-	var collision = move_and_slide(velocity, Vector2(0,-1))
+	var _collision = move_and_slide(velocity, Vector2(0,-1))
 
-	if !collision:
-		test+=1
-		print(test)
 func _get_input(jump_impulse):
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y -= jump_impulse
