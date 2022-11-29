@@ -43,3 +43,6 @@ animation = "Idle"
 [node name="Collision2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 13 )
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
