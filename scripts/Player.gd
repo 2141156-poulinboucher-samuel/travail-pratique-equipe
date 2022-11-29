@@ -8,12 +8,17 @@ export var gravity = 500.0
 export var walk_speed = 150
 export var value_jump_impulse = 375
 var velocity = Vector2()
+signal endgame
 
 """
 Fonction effectuée toutes les 16 millièmes de secondes
 Gère les déplacements
+Gère les animations
 """
 func _physics_process(delta):
+	if position.y >= 1240:
+		self.queue_free()
+		emit_signal("endgame")
 	if !is_on_floor():
 		velocity.y += delta * gravity
 	var jump_impulse = velocity.y + value_jump_impulse
@@ -23,11 +28,11 @@ func _physics_process(delta):
 		velocity.y = 1
 		
 	_get_input(jump_impulse)
-
-	var _collision = move_and_slide(velocity, Vector2(0,-1))
+	_change_animation()
+	move_and_slide(velocity, Vector2(0,-1))
 	
 """
-Fonction qui effectue le déplacement du joueur en déterminant quel touche est appuyé
+Fonction qui effectue le déplacement du joueur en déterminant quelle touche est appuyé
 """
 func _get_input(jump_impulse):
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
@@ -39,15 +44,11 @@ func _get_input(jump_impulse):
 	else:
 		velocity.x = 0
 
-"""
-Fonction effectuée à chaque frames 
-Gère les animations du joueur
-"""
 func _process(_delta):
-	_change_animation()
-
+	pass
+	
 """
-Fait le changement de l'animation du joueur en fonction de la direction qu'il va ou s'il saute
+Change l'animation du joueur en fonction de ses déplacements
 """
 func _change_animation():
 	if Input.is_action_pressed("right"):
