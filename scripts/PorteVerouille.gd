@@ -8,6 +8,6 @@ signal endgame
 """
 Tue le joueur et envoi le signal de fin de partie (défaite)
 """
-func _on_Spike_body_entered(body):
+func _on_PorteVerouille_body_entered(body):
 	body.queue_free()
 	emit_signal("endgame")

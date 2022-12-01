@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 """
-Déclaration des variables globales du script
+Déclaration des variables globales au script
 """
 onready var _animated_sprite = $Animation
 export var gravity = 500.0
@@ -10,15 +10,17 @@ export var value_jump_impulse = 375
 var velocity = Vector2()
 signal endgame
 
+var score = 0
+
 """
 Fonction effectuée toutes les 16 millièmes de secondes
 Gère les déplacements
 Gère les animations
 """
 func _physics_process(delta):
-	if position.y >= 1240:
-		self.queue_free()
-		emit_signal("endgame")
+	#if position.y >= 1240:
+	#	self.queue_free()
+	#	emit_signal("endgame")
 	if !is_on_floor():
 		velocity.y += delta * gravity
 	var jump_impulse = velocity.y + value_jump_impulse
@@ -44,9 +46,6 @@ func _get_input(jump_impulse):
 	else:
 		velocity.x = 0
 
-func _process(_delta):
-	pass
-	
 """
 Change l'animation du joueur en fonction de ses déplacements
 """
