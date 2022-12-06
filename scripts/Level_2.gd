@@ -7,12 +7,11 @@ signal victoire
 signal mort
 var PorteOuverte = preload("res://scenes/PorteOuverte.tscn")
 
-onready var map = $Map_1
-onready var gemmes = $Map_1/Gemme.get_children()
-onready var spikes = $Map_1/Spike.get_children()
+onready var map = $Map_2
+onready var gemmes = $Map_2/Gemme.get_children()
+onready var spikes = $Map_2/Spike.get_children()
 onready var player = $Player
-onready var porteVerouille = $Map_1/PorteVerouille
-onready var porteOuverte = $Map_1/PorteOuverte
+onready var porteVerouille = $Map_2/PorteVerouille
 
 var porteOuverteFin = PorteOuverte.instance()
 var gemmeCollecte = 0
@@ -35,7 +34,6 @@ func _ready():
 		spike.connect("endgame", self, "_on_EndGame")
 	player.connect("endgame", self, "_on_EndGame")
 	porteVerouille.connect("endgame", self, "_on_EndGame")
-	porteOuverte.connect("win", self, "_on_Win")
 	porteOuverteFin.connect("win", self, "_on_Win")
 
 """
@@ -43,7 +41,7 @@ Fonction qui gère l'ouverture de la porte lorsqu'assez de gemmes sont collecté
 """
 func _on_Gemme_Collected():
 	gemmeCollecte += 1
-	if gemmeCollecte == 8:
+	if gemmeCollecte == 20:
 		_change_porte()
 
 """
@@ -59,7 +57,6 @@ Affiche le menu de défaite lors de la mort du joueur
 """
 func _on_EndGame():
 	emit_signal("mort")
-
 """
 Envoi le signal lors de la victoire 
 """

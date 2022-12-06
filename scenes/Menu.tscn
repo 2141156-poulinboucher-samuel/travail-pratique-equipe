@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/Menu_background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/PoorStory-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scripts/menu.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -112,5 +112,5 @@ custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "Quit"
 
-[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Play_Button" to="." method="_on_Play_Button_button_up"]
-[connection signal="button_up" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Quit_Button" to="." method="_on_Quit_Button_button_up"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Play_Button" to="." method="_on_Play_Button_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Quit_Button" to="." method="_on_Quit_Button_button_down"]
