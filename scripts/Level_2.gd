@@ -25,8 +25,9 @@ Vérifie si le personnage tombe hors de la carte et signal la fin de la partie s
 """
 func _process(delta):
 	if player.position.y > 1240:
+		var score = player.score
 		player.queue_free()
-		_on_EndGame()
+		_on_EndGame(score)
 		
 """
 Initialise les signaux et les assignes à leur méthode
@@ -60,14 +61,14 @@ func _change_porte():
 """
 Affiche le menu de défaite lors de la mort du joueur
 """
-func _on_EndGame():
-	emit_signal("mort")
-	
+func _on_EndGame(score:int):
+	emit_signal("mort", score)
+
 """
 Envoi le signal lors de la victoire 
 """
-func _on_Win():
-	emit_signal("victoire")
+func _on_Win(score:int):
+	emit_signal("victoire", score)
 
 """
 À chaque 2.5 secondes, fait apparaître une balle sur le bloc de fer

@@ -16,6 +16,7 @@ Si la balle entre en collision avec le joueur, envoie le signal de fin de partie
 """
 func _on_AlienBullet_body_entered(body):
 	if "score" in body:
+		var score = body.score
 		body.queue_free()
-		emit_signal("endgame")
+		emit_signal("endgame", score)
 	self.queue_free()

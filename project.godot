@@ -12,10 +12,11 @@ config_version=4
 
 config/name="TP_En_Equipe"
 run/main_scene="res://scenes/Main.tscn"
-config/icon="res://assets/icon.png"
+config/icon="res://assets/Zombie/Poses/zombie_cheer1.png"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
