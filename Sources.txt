@@ -1,3 +1,4 @@
 Assets
 https://www.kenney.nl/assets/platformer-characters
-https://thegemdev.itch.io/2d-platform-assets-1
+https://www.kenney.nl/assets/simplified-platformer-pack
+https://docs.godotengine.org/fr/stable/index.html
