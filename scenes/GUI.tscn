@@ -30,8 +30,11 @@ custom_fonts/font = SubResource( 1 )
 text = "X"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="nombre_gem" type="Label" parent="."]
+[node name="nombre_gemme" type="Label" parent="."]
 margin_left = 544.0
 margin_top = -384.0
 margin_right = 608.0
@@ -41,3 +44,6 @@ custom_fonts/font = SubResource( 2 )
 text = "00"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}

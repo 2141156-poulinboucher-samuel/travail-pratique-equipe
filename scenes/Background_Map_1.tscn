@@ -8,16 +8,24 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( 2284, -463.999 )
-scale = Vector2( 3.02917, 2.28148 )
+position = Vector2( 1580, -106 )
+scale = Vector2( 2.7125, 1.5 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sprite2" type="Sprite" parent="ParallaxLayer"]
-position = Vector2( 2280, 1225 )
-scale = Vector2( 3.025, 0.846296 )
+position = Vector2( 1576, 1140 )
+scale = Vector2( 2.70833, 0.807407 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite3" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 2248, 696 )
+scale = Vector2( 0.429167, 0.574074 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true

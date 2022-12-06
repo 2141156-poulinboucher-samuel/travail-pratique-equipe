@@ -3,7 +3,7 @@ extends Area2D
 """
 Déclaration des variables globales au script
 """
-signal endgame
+signal endgame()
 
 """
 Tue le joueur et envoi le signal de fin de partie (défaite)

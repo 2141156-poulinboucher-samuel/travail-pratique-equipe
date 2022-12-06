@@ -49,7 +49,7 @@ margin_bottom = 597.0
 margin_right = 1024.0
 margin_bottom = 597.0
 
-[node name="Space_invader" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Zombie Jump" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 296.0
 size_flags_horizontal = 3

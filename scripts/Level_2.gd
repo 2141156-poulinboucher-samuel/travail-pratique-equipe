@@ -15,6 +15,7 @@ onready var spikes = $Map_2/Spike.get_children()
 onready var player = $Player
 onready var porteVerouille = $Map_2/PorteVerouille
 onready var emplacementBalle = $Map_2/ApparitionBalle
+onready var nombreGemme = $Player/GUI/nombre_gemme
 
 var porteOuverteFin = PorteOuverte.instance()
 var gemmeCollecte = 0
@@ -44,6 +45,7 @@ Fonction qui gère l'ouverture de la porte lorsqu'assez de gemmes sont collecté
 """
 func _on_Gemme_Collected():
 	gemmeCollecte += 1
+	nombreGemme.text = str(gemmeCollecte)
 	if gemmeCollecte == 20:
 		_change_porte()
 
