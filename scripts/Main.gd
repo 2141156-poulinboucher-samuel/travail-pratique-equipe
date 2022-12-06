@@ -31,6 +31,15 @@ func _on_Changement_Scene():
 	scene_actuelle = prochaine_scene
 	
 	noeud_prochaine_scene.connect("victoire", self, "_on_Changement_Scene")
+	noeud_prochaine_scene.connect("mort", self, "_on_Mort")
 	noeud_scene_actuelle.queue_free()
 	add_child(noeud_prochaine_scene)
 	noeud_scene_actuelle = noeud_prochaine_scene
+
+"""
+Lorsque le joueur meurs, change la scène pour le menu de défaite
+"""
+func _on_Mort():
+	var menu_defaite = MenuDefaite.instance()
+	noeud_scene_actuelle.queue_free()
+	add_child(menu_defaite)
