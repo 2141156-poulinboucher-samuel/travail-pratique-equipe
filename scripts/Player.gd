@@ -18,9 +18,6 @@ Gère les déplacements
 Gère les animations
 """
 func _physics_process(delta):
-	#if position.y >= 1240:
-	#	self.queue_free()
-	#	emit_signal("endgame")
 	if !is_on_floor():
 		velocity.y += delta * gravity
 	var jump_impulse = velocity.y + value_jump_impulse

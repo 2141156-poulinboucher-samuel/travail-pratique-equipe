@@ -6,9 +6,7 @@ Déclaration des variables globales au script
 signal endgame(score)
 
 """
-Tue le joueur et envoi le signal de fin de partie (défaite)
+Envoi le signal de fin de partie (défaite) lorsque le joueur touche la porte verouillée
 """
 func _on_PorteVerouille_body_entered(body):
-	var score = body.score
-	body.queue_free()
-	emit_signal("endgame", score)
+	emit_signal("endgame", body.score)

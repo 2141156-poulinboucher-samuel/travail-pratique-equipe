@@ -13,6 +13,7 @@ var MenuDefaite = preload("res://scenes/MenuDefaite.tscn")
 var scene_actuelle = 0
 var noeud_scene_actuelle
 var scoreFinal = 0
+
 """
 Initialise le menu de démarrage et l'ajoute au main
 """

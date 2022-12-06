@@ -5,6 +5,7 @@ Déclaration des variables globales au script
 """
 signal victoire
 signal mort
+
 var PorteOuverte = preload("res://scenes/PorteOuverte.tscn")
 
 onready var map = $Map_1
@@ -23,9 +24,7 @@ Vérifie si le personnage tombe hors de la carte et signal la fin de la partie s
 """
 func _process(delta):
 	if player.position.y > 1240:
-		var score = player.score
-		player.queue_free()
-		_on_EndGame(score)
+		_on_EndGame(player.score)
 		
 """
 Initialise les signaux et les assignes à leur méthode
