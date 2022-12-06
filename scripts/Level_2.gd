@@ -5,13 +5,16 @@ Déclaration des variables globales au script
 """
 signal victoire
 signal mort
+
 var PorteOuverte = preload("res://scenes/PorteOuverte.tscn")
+var Balle = preload("res://scenes/BallePiege.tscn")
 
 onready var map = $Map_2
 onready var gemmes = $Map_2/Gemme.get_children()
 onready var spikes = $Map_2/Spike.get_children()
 onready var player = $Player
 onready var porteVerouille = $Map_2/PorteVerouille
+onready var emplacementBalle = $Map_2/ApparitionBalle
 
 var porteOuverteFin = PorteOuverte.instance()
 var gemmeCollecte = 0
@@ -57,8 +60,18 @@ Affiche le menu de défaite lors de la mort du joueur
 """
 func _on_EndGame():
 	emit_signal("mort")
+	
 """
 Envoi le signal lors de la victoire 
 """
 func _on_Win():
 	emit_signal("victoire")
+
+"""
+À chaque 2.5 secondes, fait apparaître une balle sur le bloc de fer
+"""
+func _on_Timer_timeout():
+	var balle = Balle.instance()
+	balle.global_position = emplacementBalle.global_position
+	balle.connect("endgame", self, "_on_EndGame")
+	map.add_child(balle)

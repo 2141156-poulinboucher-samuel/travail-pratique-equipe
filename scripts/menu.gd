@@ -1,4 +1,5 @@
 extends Node
+
 """
 Déclaration des variables globales du script
 """
